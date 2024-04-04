@@ -1,4 +1,4 @@
-export default function TaskList({ tasks }) {
+export default function ListOfTask({ tasks = [] }) {
   return (
     <div>
       <ul>

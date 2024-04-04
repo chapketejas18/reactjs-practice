@@ -28,7 +28,11 @@ const SlideShow = () => {
   };
 
   const handleIntervalChange = (event) => {
-    setIntervalTime(Number(event.target.value) * 1000);
+    if(event.target.value) {
+      setIntervalTime(Number(event.target.value) * 1000);
+    } else {
+      setIntervalTime('');
+    }
   };
 
   return (
@@ -41,7 +45,7 @@ const SlideShow = () => {
         <button onClick={handlePausePlay}>{isPaused ? 'Play' : 'Pause'}</button>
         <label>
           Interval Time (seconds):
-          <input type="number" min="1" value={intervalTime / 1000} onChange={handleIntervalChange} />
+          <input type="number" min="1" value={intervalTime ? intervalTime / 1000 : ''} onChange={handleIntervalChange} />
         </label>
       </div>
     </div>
