@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ToDoList = () => {
+export const ToDoList = () => {
   const [todos, setTodos] = useState([]);
 
   const addTodo = () => {
@@ -44,5 +44,3 @@ const ToDoList = () => {
     </div>
   );
 };
-
-export default ToDoList;

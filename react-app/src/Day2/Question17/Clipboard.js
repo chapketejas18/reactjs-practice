@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useClipboard from "./useClipboard";
 
-const Clipboard = () => {
+export const Clipboard = () => {
   const [text, handleCopy, copied] = useClipboard("");
   const [value, setValue] = useState("");
 
@@ -29,4 +29,3 @@ const Clipboard = () => {
   );
 };
 
-export default Clipboard;

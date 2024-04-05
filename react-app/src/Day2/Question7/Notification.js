@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Notification = () => {
+export const Notification = () => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
@@ -20,6 +20,3 @@ const Notification = () => {
     </div>
   );
 };
-
-export default Notification;
-

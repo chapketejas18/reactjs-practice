@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 
-const EmployeeSalary = () => {
+export const EmployeeSalary = () => {
   const [employees, setEmployees] = useState([
     { name: 'ABC', salary: 10000 },
     { name: 'XYZ', salary: 90000 },
@@ -28,4 +28,3 @@ const EmployeeSalary = () => {
   );
 };
 
-export default EmployeeSalary;

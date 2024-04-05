@@ -1,11 +1,36 @@
-import DayOneIndex from "./Day1/DayOneIndex";
-import DayTwoIndex from "./Day2/DayTwoIndex";
+import React from 'react';
+import { Greetings, UserCard, CounterOne, TaskArray, ButtonColor } from './Day1';
+import {Counter, PersonForm, ToDoList, RandomNumberGenerator, CounterWithStep, Clock, Notification, SlideShow, ThemedContext, ChangeLanguage, AddToCartProducts, VotingApp, Parent, Tasks, StudentList, EmployeeSalary, Clipboard, UserPreference, CountDown} from "./Day2";
 
-export default function App() {
+function App() {
   return (
-    <>
-      <DayOneIndex/>
-      <DayTwoIndex/>
-    </>
+    <div>
+      <Greetings />
+      <UserCard />
+      <CounterOne />
+      <TaskArray />
+      <ButtonColor />
+      <Counter />
+      <PersonForm />
+      <ToDoList />
+      <RandomNumberGenerator />
+      <CounterWithStep />
+      <Clock />
+      <Notification />
+      <SlideShow />
+      <ThemedContext />
+      <ChangeLanguage />
+      <AddToCartProducts />
+      <VotingApp />
+      <Parent />
+      <Tasks />
+      <StudentList />
+      <EmployeeSalary />
+      <Clipboard />
+      <UserPreference />
+      <CountDown />
+    </div>
   );
 }
+
+export default App;

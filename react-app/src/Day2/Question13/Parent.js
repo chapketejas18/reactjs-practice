@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import Child from './Child';
 
-const Parent = () => {
+export const Parent = () => {
     const [count, setCount] = useState(0);
   
     const incrementCount = useCallback(() => {
@@ -22,4 +22,3 @@ const Parent = () => {
     );
   };
   
-  export default Parent;

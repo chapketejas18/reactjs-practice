@@ -24,7 +24,7 @@ const reducer = (state, action) => {
 };
 
 
-const VotingApp = () => {
+export const VotingApp = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleVote = (option) => {
@@ -50,4 +50,3 @@ const VotingApp = () => {
   );
 };
 
-export default VotingApp;

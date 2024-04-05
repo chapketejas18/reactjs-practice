@@ -1,6 +1,6 @@
 import useTimer from './useTimer'
 
-const CountDown = () => {
+export const CountDown = () => {
   const initialDuration = 180
   const { duration, isRunning, startTimer, pauseTimer, resetTimer } =
     useTimer(initialDuration)
@@ -26,5 +26,3 @@ const CountDown = () => {
     </div>
   )
 }
-
-export default CountDown

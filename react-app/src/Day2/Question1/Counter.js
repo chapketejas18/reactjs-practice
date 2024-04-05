@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './Counter.css';
-export default function Counter(){
+export const Counter = () => {
     const [count, setCount] = useState(0);
     return(
         <div className="counter">

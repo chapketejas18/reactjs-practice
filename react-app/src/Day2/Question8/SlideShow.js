@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const SlideShow = () => {
+export const SlideShow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [intervalTime, setIntervalTime] = useState(3000);
@@ -52,4 +52,3 @@ const SlideShow = () => {
   );
 };
 
-export default SlideShow;

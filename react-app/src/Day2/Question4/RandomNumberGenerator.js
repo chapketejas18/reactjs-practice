@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function RandomNumberGenerator() {
+export const RandomNumberGenerator = () => {
   const [randomNumber, setRandomNumber] = useState(generateRandomNumber());
 
   function generateRandomNumber() {

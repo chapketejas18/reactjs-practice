@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-export default function App5() {
+export const ButtonColor = () => {
   return (
     <div>
       <Button color="black" text="Click Me" />

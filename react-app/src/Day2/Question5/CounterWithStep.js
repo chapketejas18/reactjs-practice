@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function CounterWithStep(){
+export const CounterWithStep = () => {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
 

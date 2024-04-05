@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 
-const StudentList = () => {
+export const StudentList = () => {
   const [students, setStudents] = useState(['Tejas']);
   const memoizedStudents = useMemo(() => students, [students]);
 
@@ -24,4 +24,3 @@ const StudentList = () => {
   );
 };
 
-export default StudentList;

@@ -6,7 +6,7 @@ const setting = {
   language: 'english',
 }
 
-const UserPreference = () => {
+export const UserPreference = () => {
   const [preference, setPreference] = useState(setting)
   const [getItem, removeItem, setItem] = useLocalStorage()
   const [currentPreference, setCurrentPreference] = useState(preference)
@@ -95,5 +95,3 @@ const UserPreference = () => {
     </div>
   )
 }
-
-export default UserPreference
