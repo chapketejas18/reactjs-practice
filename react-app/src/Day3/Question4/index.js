@@ -1,0 +1,1 @@
+export {MainCopy} from "./MainCopy";

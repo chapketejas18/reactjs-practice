@@ -1,10 +1,16 @@
 import React, { useContext } from "react";
-import { LoginProvider } from "./Parent";
-export const Child = () => {
+import { LoginProvider } from "./Parent2";
+import { ThemeProvider } from "./Parent2";
+import styles from "../assignment2.module.css";
+export const Child2 = () => {
   const { val, state, setVal, setState } = useContext(LoginProvider);
+  const { theme, setTheme } = useContext(ThemeProvider);
 
   return (
-    <div>
+    <div
+      className={!theme ? styles.dark : styles.light}
+      color={theme ? styles.light : styles.dark}
+    >
       <input
         type="text"
         placeholder="User Name"
@@ -22,6 +28,9 @@ export const Child = () => {
         {state ? "LogOut" : "LogIn"}
       </button>
       <h2>{state ? `Welcome,${val}` : "Please log in."}</h2>
+      <button onClick={() => setTheme(!theme)}>
+        {theme ? "Dark" : "Light"}
+      </button>
     </div>
   );
 };

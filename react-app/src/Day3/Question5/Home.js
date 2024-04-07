@@ -1,5 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, Outlet } from "react-router";
+
 const Home = () => {
   const navigate = useNavigate();
   return (
@@ -7,18 +8,12 @@ const Home = () => {
       <h1>Home</h1>
       <button
         onClick={() => {
-          navigate("/about");
-        }}
-      >
-        About
-      </button>
-      <button
-        onClick={() => {
           navigate("/");
         }}
       >
         Main Page
       </button>
+      <Outlet />
     </div>
   );
 };

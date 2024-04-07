@@ -1,10 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router";
-const Home = () => {
+
+const MainPage = () => {
   const navigate = useNavigate();
+
   return (
     <div>
-      <h1>Home</h1>
+      <h1>I am in Main Page</h1>
+      <button
+        onClick={() => {
+          navigate("/home");
+        }}
+      >
+        Home
+      </button>
       <button
         onClick={() => {
           navigate("/about");
@@ -12,15 +21,8 @@ const Home = () => {
       >
         About
       </button>
-      <button
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        Main Page
-      </button>
     </div>
   );
 };
 
-export default Home;
+export default MainPage;

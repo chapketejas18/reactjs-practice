@@ -1,13 +1,18 @@
 import React, { createContext, useState } from "react";
-import {Child} from "./Child.js";
+import {Child2} from "./Child2";
 export const LoginProvider = createContext();
-export const Parent = () => {
+export const ThemeProvider = createContext();
+
+export const Parent2 = () => {
   const [val, setVal] = useState();
   const [state, setState] = useState(false);
+  const [theme, setTheme] = useState(false);
   return (
     <div>
       <LoginProvider.Provider value={{ val, state, setVal, setState }}>
-        <Child />
+        <ThemeProvider.Provider value={{ theme, setTheme }}>
+          <Child2 />
+        </ThemeProvider.Provider>
       </LoginProvider.Provider>
     </div>
   );
