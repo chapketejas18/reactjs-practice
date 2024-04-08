@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { LoginProvider } from "./Parent";
+import { LoginProvider } from "./ParentNew";
 export const Child = () => {
   const { val, state, setVal, setState } = useContext(LoginProvider);
 
