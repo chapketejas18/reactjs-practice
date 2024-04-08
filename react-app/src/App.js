@@ -1,21 +1,34 @@
-// import DayOneIndex from "./Day1/DayOneIndex";
-// import DayTwoIndex from "./Day2/DayTwoIndex";
-// import Child from "./Day3/Question1/Child";
-// import Parent from "./Day3/Question1/Parent";
-// import MainApp from "./Day3/Question3/MainApp";
-
-import DayFourIndex from "./Day4/DayFourIndex";
-
+import { InputComponent, Form, ConditionalMessageComponent,  RegistrationForm, SelectDropdown, ControlledToDoList, DummyData, TemperatureConverter, SideBarNavigation, TextFieldValidation, ModalDialog, EnhancedTable, FormValidation, FormData} from "./Day4";
 export default function App() {
   return (
-    <>
-      {/* <DayOneIndex/>
-      <DayTwoIndex/> */}
-      {/* <Parent>
-        <Child/>
-      </Parent>
-      <MainApp/> */}
-      <DayFourIndex/>
-    </>
+    <div>
+      <InputComponent/>
+      <hr/>
+      <Form/>
+      <hr/>
+      <ConditionalMessageComponent/>
+      <hr/>
+      <RegistrationForm/>
+      <hr/>
+      <SelectDropdown/>
+      <hr/>
+      <ControlledToDoList/>
+      <hr/>
+      <DummyData/>
+      <hr/>
+      <TemperatureConverter/>
+      <hr/>
+      <SideBarNavigation/>
+      <hr/>
+      <TextFieldValidation/>
+      <hr/>
+      <ModalDialog/>
+      <hr/>
+      <EnhancedTable/>
+      <hr/>
+      <FormValidation/>
+      <hr/>
+      <FormData/>
+    </div>
   );
 }

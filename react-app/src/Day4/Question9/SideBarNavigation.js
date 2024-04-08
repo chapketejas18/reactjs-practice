@@ -1,23 +1,21 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Sidebar from './Sidebar';
-import home from './home';
-import about from './about';
-import contact from './contact';
-import setting from './setting';
-import help from './help';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SideBar from "./SideBar";
+import Setting from "./Setting";
+import Logout from "./Logout";
+import AboutUs from "./AboutUs";
+import Charts from "./Charts";
 
 export const SideBarNavigation = () => {
   return (
     <BrowserRouter>
-      <Sidebar />
       <Routes>
-        <Route path="/" exact component={home} />
-        <Route path="/about" component={about} />
-        <Route path="/contact" component={contact} />
-        <Route path="/setting" component={setting} />
-        <Route path="/help" component={help} />
+        <Route path="/" element={<SideBar />}>
+          <Route path="setting" element={<Setting />}></Route>
+          <Route path="logout" element={<Logout />}></Route>
+          <Route path="about" element={<AboutUs />}></Route>
+          <Route path="charts" element={<Charts />}></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
-}
+};
