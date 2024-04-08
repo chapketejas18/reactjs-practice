@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function RegistrationForm() {
+export const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -68,5 +68,3 @@ function RegistrationForm() {
     </form>
   );
 }
-
-export default RegistrationForm;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Form() {
+export const Form = () => {
   const [formData, setFormData] = useState({
     textInput: '',
     checkboxInput: false,
@@ -72,5 +72,3 @@ function Form() {
     </form>
   );
 }
-
-export default Form;

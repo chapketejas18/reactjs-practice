@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function InputComponent() {
+export const InputComponent = () => {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (event) => {
@@ -19,5 +19,3 @@ function InputComponent() {
     </div>
   );
 }
-
-export default InputComponent;

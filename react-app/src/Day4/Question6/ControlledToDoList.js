@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function ControlledToDoList() {
+export const ControlledToDoList = () => {
   const [taskInput, setTaskInput] = useState('');
   const [tasks, setTasks] = useState([]);
 

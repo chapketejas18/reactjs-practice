@@ -7,7 +7,7 @@ import contact from './contact';
 import setting from './setting';
 import help from './help';
 
-function SideBarNavigation() {
+export const SideBarNavigation = () => {
   return (
     <BrowserRouter>
       <Sidebar />
@@ -21,5 +21,3 @@ function SideBarNavigation() {
     </BrowserRouter>
   );
 }
-
-export default SideBarNavigation;

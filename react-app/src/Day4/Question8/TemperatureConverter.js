@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const TemperatureConverter = () => {
+export const TemperatureConverter = () => {
   const [celsius, setCelsius] = useState('');
   const [fahrenheit, setFahrenheit] = useState('');
 
@@ -38,5 +38,3 @@ const TemperatureConverter = () => {
     </div>
   );
 };
-
-export default TemperatureConverter;

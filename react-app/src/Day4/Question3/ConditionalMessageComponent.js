@@ -4,7 +4,7 @@ const MessageComponent = () => {
   return <div>This is the message component.</div>;
 };
 
-const ConditionalMessageComponent = () => {
+export const ConditionalMessageComponent = () => {
   const [inputValue, setInputValue] = useState('');
   const [showMessage, setShowMessage] = useState(false);
 
@@ -33,5 +33,3 @@ const ConditionalMessageComponent = () => {
     </div>
   );
 };
-
-export default ConditionalMessageComponent;

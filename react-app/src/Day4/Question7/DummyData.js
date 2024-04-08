@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchFilter from './SearchFilter';
 
-const DummyData = () => {
+export const DummyData = () => {
   const items = [
     'spray', 'elite', 'exuberant', 'destruction', 'present'
   ];
@@ -13,5 +13,3 @@ const DummyData = () => {
     </div>
   );
 };
-
-export default DummyData;
