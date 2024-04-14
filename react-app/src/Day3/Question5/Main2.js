@@ -1,24 +1,33 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
-import Dashboard from "./Dashboard";
-import NotFound from "./NotFound";
-import Profile from "./Profile";
-import Section from "./Section";
+import React, { createContext, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import Authenticate from './Authenticate'
+import Dashboard from './Dashboard/Dashboard'
+import Profile from './Dashboard/Profile'
+import Settings from './Dashboard/Settings'
+import Login from './Login'
+
+export const MyContext = createContext()
 
 export const Main2 = () => {
+  const [auth, setAuth] = useState({ username: '', password: '' })
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Dashboard />}>
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/section" element={<Section />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-};
+    <MyContext.Provider value={{ auth, setAuth }}>
+      <Router>
+        <nav>
+          <Link to="/dashboard">Dashboard</Link>
+        </nav>
+
+        <Routes>
+          <Route element={<Authenticate />}>
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route element={<Profile />} path="profile" />
+              <Route element={<Settings />} path="settings" />
+            </Route>
+          </Route>
+          <Route element={<Login />} path="/login" />
+        </Routes>
+      </Router>
+    </MyContext.Provider>
+  )
+}

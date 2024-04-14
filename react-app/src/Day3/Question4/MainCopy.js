@@ -1,17 +1,30 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
-import {AuthenticationPage} from "./AuthenticationPage";
-import NotFound from "./NotFound";
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import Home from './Home'
+import Login from './Login'
+import About from './About'
+import { createContext, useState } from 'react'
+import AuthenticationPage from './AuthenticationPage'
+
+export const MyContext = createContext()
 export const MainCopy = () => {
+  const [auth, setAuth] = useState({ username: '', password: '' })
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<AuthenticationPage />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
+    <MyContext.Provider value={{ auth, setAuth }}>
+      <Router>
+        <nav className="nav">
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route element={<AuthenticationPage />}>
+            <Route element={<Home />} path="/" exact />
+            <Route element={<About />} path="/about" />
+          </Route>
+          <Route element={<Login />} path="/login" />
+        </Routes>
+      </Router>
+    </MyContext.Provider>
+  )
+}

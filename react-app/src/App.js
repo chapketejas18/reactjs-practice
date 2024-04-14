@@ -1,6 +1,6 @@
 import { Greetings, UserCard, CounterOne, TaskArray, ButtonColor } from './Day1';
 import {Counter, PersonForm, ToDoList, RandomNumberGenerator, CounterWithStep, Clock, Notification, SlideShow, ThemedContext, ChangeLanguage, AddToCartProducts, VotingApp, Parent, Tasks, StudentList, EmployeeSalary, Clipboard, UserPreference, CountDown} from "./Day2";
-import { ParentNew, Parent2, Main, MainCopy, Main2, ProductApp } from "./Day3";
+import { ParentNew, Parent2, MainCopy, Main2, ProductApp, Wrapper } from "./Day3";
 
 export default function App() {
   return (
@@ -29,11 +29,17 @@ export default function App() {
       <Clipboard />
       <UserPreference />
       <CountDown />
+      <hr/>
       <ParentNew/>
+      <hr/>
       <Parent2/>
-      <Main/>
+      <hr/>
+      <Wrapper/>
+      <hr/>
       <MainCopy/>
+      <hr/>
       <Main2/>
+      <hr/>
       <ProductApp/>
     </div>
   );

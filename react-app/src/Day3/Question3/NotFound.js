@@ -1,11 +1,15 @@
-import React from "react";
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const NotFound = () => {
-  return (
-    <div>
-      <h1>404 Not Found</h1>
-    </div>
-  );
-};
+  const navigate = useNavigate()
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/')
+    }, 3000)
+    return () => clearTimeout(timer)
+  })
+  return <div>404 Not Found</div>
+}
 
-export default NotFound;
+export default NotFound

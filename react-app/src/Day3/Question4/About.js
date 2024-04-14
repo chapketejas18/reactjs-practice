@@ -1,27 +1,15 @@
-import React from "react";
-import { useNavigate } from "react-router";
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 const About = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/')
+    }, 3000)
+    return () => clearTimeout(timer)
+  })
+  return <div>About</div>
+}
 
-  return (
-    <div>
-      <h1>I am in About</h1>
-      <button
-        onClick={() => {
-          navigate("/home");
-        }}
-      >
-        Home
-      </button>
-      <button
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        Main Page
-      </button>
-    </div>
-  );
-};
-
-export default About;
+export default About
