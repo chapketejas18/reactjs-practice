@@ -28,13 +28,9 @@ import {
   CountDown,
 } from "./Day2";
 import {
-  AxiosApi,
   AxiosApiErrorHandling,
-  FetchApi,
-  FetchApiWithErrorHandling,
-  FetchGraphQl,
-  LoadingIndicator,
-  Modal,
+  DisplayData,
+  Modalnew,
   MyComponentWithLogger,
   Pagination,
   ShowData,
@@ -70,14 +66,22 @@ function App() {
       <Clipboard />
       <UserPreference />
       <CountDown />
+      <hr/>
       <Pagination />
+      <hr/>
       <AxiosApiErrorHandling />
+      <hr/>
       <ApolloProvider client = {client}>
         <ShowData />
       </ApolloProvider>
+      <hr/>
       <ButtonsColor/>
-      {/* <Modal/> */}
+      <hr/>
+      <Modalnew/>
+      <hr/>
       <MyComponentWithLogger/>
+      <hr/>
+      <DisplayData/>
     </div>
   );
 }
