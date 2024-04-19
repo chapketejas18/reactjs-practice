@@ -33,6 +33,7 @@ import {
   Modalnew,
   MyComponentWithLogger,
   Pagination,
+  RouteApp,
   ShowData,
 } from "./Day5";
 import { ApolloProvider } from "@apollo/client";
@@ -82,6 +83,8 @@ function App() {
       <MyComponentWithLogger/>
       <hr/>
       <DisplayData/>
+      <hr/>
+      <RouteApp/>
     </div>
   );
 }
