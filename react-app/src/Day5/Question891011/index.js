@@ -1,1 +1,1 @@
-export {ShowData} from "./ShowData";
+export { ShowData } from "./ShowData";

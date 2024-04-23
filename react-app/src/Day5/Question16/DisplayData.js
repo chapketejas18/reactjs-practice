@@ -5,9 +5,11 @@ const DisplayData = ({ data }) => {
   return (
     data && (
       <div>
-            <ul>
-                {data.map((item) => <li key={item.id}>{item.title}</li>)}
-            </ul>
+        <ul>
+          {data.map((item) => (
+            <li key={item.id}>{item.title}</li>
+          ))}
+        </ul>
       </div>
     )
   );

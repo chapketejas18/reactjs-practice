@@ -7,7 +7,9 @@ export const Pagination = () => {
 
   const fetchApi = async () => {
     try {
-      const res = await fetch(`https://jsonplaceholder.typicode.com/todos?_page=${currPage}&_limit=${10}`);
+      const res = await fetch(
+        `https://jsonplaceholder.typicode.com/todos?_page=${currPage}&_limit=${10}`
+      );
       const resData = await res.json();
       console.log(resData);
       setUsers(resData);
@@ -33,13 +35,23 @@ export const Pagination = () => {
           {users.map((item) => (
             <li key={item.id}>{item.title}</li>
           ))}
-          <button onClick={()=>{
-            setCurPage((prev)=>prev-1);
-          }} disabled={currPage===1}>prev</button>
+          <button
+            onClick={() => {
+              setCurPage((prev) => prev - 1);
+            }}
+            disabled={currPage === 1}
+          >
+            prev
+          </button>
           page:{currPage}
-          <button onClick={()=>{
-            setCurPage((prev)=>prev+1);
-          }} disabled={currPage===10}>next</button>
+          <button
+            onClick={() => {
+              setCurPage((prev) => prev + 1);
+            }}
+            disabled={currPage === 10}
+          >
+            next
+          </button>
         </ul>
       )}
     </>

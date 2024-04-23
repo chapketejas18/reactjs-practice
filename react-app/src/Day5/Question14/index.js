@@ -1,1 +1,1 @@
-export {RouteApp} from "./RouteApp";
+export { RouteApp } from "./RouteApp";

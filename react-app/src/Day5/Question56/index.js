@@ -1,1 +1,1 @@
-export {AxiosApiErrorHandling} from "./AxiosApiErrorHandling";
+export { AxiosApiErrorHandling } from "./AxiosApiErrorHandling";

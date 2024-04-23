@@ -67,24 +67,24 @@ function App() {
       <Clipboard />
       <UserPreference />
       <CountDown />
-      <hr/>
+      <hr />
       <Pagination />
-      <hr/>
+      <hr />
       <AxiosApiErrorHandling />
-      <hr/>
-      <ApolloProvider client = {client}>
+      <hr />
+      <ApolloProvider client={client}>
         <ShowData />
       </ApolloProvider>
-      <hr/>
-      <ButtonsColor/>
-      <hr/>
-      <Modalnew/>
-      <hr/>
-      <MyComponentWithLogger/>
-      <hr/>
-      <DisplayData/>
-      <hr/>
-      <RouteApp/>
+      <hr />
+      <ButtonsColor />
+      <hr />
+      <Modalnew />
+      <hr />
+      <MyComponentWithLogger />
+      <hr />
+      <DisplayData />
+      <hr />
+      <RouteApp />
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
+import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
 import { GET_DATA } from "./Query";
 
 export const ShowData = () => {
@@ -12,16 +12,20 @@ export const ShowData = () => {
   };
 
   if (loading) return <p>Loading...</p>;
-  if (error) return (
-    <div>
-      <p>Error: {error.message}</p>
-      <button onClick={handleQueryRetry}>Retry</button>
-    </div>
-  );
+  if (error)
+    return (
+      <div>
+        <p>Error: {error.message}</p>
+        <button onClick={handleQueryRetry}>Retry</button>
+      </div>
+    );
 
   const indexOfLastEntry = currentPage * entriesPerPage;
   const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
-  const currentEntries = data.countries.slice(indexOfFirstEntry, indexOfLastEntry);
+  const currentEntries = data.countries.slice(
+    indexOfFirstEntry,
+    indexOfLastEntry
+  );
 
   const totalPages = Math.ceil(data.countries.length / entriesPerPage);
 
@@ -36,7 +40,7 @@ export const ShowData = () => {
       setCurrentPage(currentPage + 1);
     }
   };
-  
+
   return (
     <div>
       <h1>Data</h1>
@@ -54,7 +58,9 @@ export const ShowData = () => {
         <button onClick={handlePreviousPage} disabled={currentPage === 1}>
           Previous
         </button>
-        <span>Page {currentPage} of {totalPages}</span>
+        <span>
+          Page {currentPage} of {totalPages}
+        </span>
         <button onClick={handleNextPage} disabled={currentPage === totalPages}>
           Next
         </button>
