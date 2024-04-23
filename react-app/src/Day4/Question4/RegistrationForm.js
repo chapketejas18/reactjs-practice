@@ -19,7 +19,6 @@ export const RegistrationForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.password === formData.confirmPassword) {
-      // Submit the form
       console.log("Form submitted:", formData);
     } else {
       setPasswordsMatch(false);

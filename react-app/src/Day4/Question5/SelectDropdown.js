@@ -7,14 +7,20 @@ export const SelectDropdown = () => {
     setSelectedOption(event.target.value);
   };
 
+  const optionsObj = [
+    { value: "Select an Option", text: "" },
+    { value: "8 AM", text: "Good morning" },
+    { value: "2 PM", text: "Good afternoon" },
+    { value: "6 PM", text: "Good evening" },
+    { value: "10 PM", text: "Good night" },
+  ];
+
   return (
     <div>
       <select value={selectedOption} onChange={handleSelectChange}>
-        <option value="">Select an option</option>
-        <option value="Good Morning">8 AM</option>
-        <option value="Good afternoon">2 PM</option>
-        <option value="Good evening">6 PM</option>
-        <option value="Good Night">10 PM</option>
+        {optionsObj.map(({ value, text }) => (
+          <option value={text}>{value}</option>
+        ))}
       </select>
       {selectedOption && <p>Greet: {selectedOption}</p>}
     </div>
