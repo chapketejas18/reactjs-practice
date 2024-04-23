@@ -1,35 +1,27 @@
-import React, { useState } from 'react';
-import {Button} from './Button';
+import React, { useState } from "react";
+import { Button } from "./Button";
 
 export const ButtonsColor = () => {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
-  const handlePrimaryClick = () => {
-    setMessage('Primary Button Clicked');
+  const onButtonClick = (buttonType) => {
+    setMessage(`${buttonType} Clicked`);
   };
 
-  const handleSecondaryClick = () => {
-    setMessage('Secondary Button Clicked');
-  };
-
-  const handleDangerClick = () => {
-    setMessage('Danger Button Clicked');
-  };
+  const buttonTypes = [
+    { value: "primary", label: "Primary Button" },
+    { value: "secondary", label: "Secondary Button" },
+    { value: "danger", label: "Danger Button" },
+  ];
 
   return (
-    <div>
-      <Button style="primary" onClick={handlePrimaryClick}>
-        Primary Button
-      </Button>
-
-      <Button style="secondary" onClick={handleSecondaryClick}>
-        Secondary Button
-      </Button>
-
-      <Button style="danger" onClick={handleDangerClick}>
-        Danger Button
-      </Button>
+    <>
+      {buttonTypes.map(({ value, label }) => (
+        <Button style={value} onClick={() => onButtonClick(label)}>
+          {label}
+        </Button>
+      ))}
       {message && <h2>{message}</h2>}
-    </div>
+    </>
   );
 };

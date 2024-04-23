@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const withLogger = (WrappedComponent) => {
   const WithLogger = (props) => {
@@ -8,23 +8,23 @@ const withLogger = (WrappedComponent) => {
     useEffect(() => {
       setLogMessages((prevLogMessages) => [
         ...prevLogMessages,
-        `Component ${WrappedComponent.name} mounted`
+        `Component ${WrappedComponent.name} mounted`,
       ]);
 
       return () => {
         setLogMessages((prevLogMessages) => [
           ...prevLogMessages,
-          `Component ${WrappedComponent.name} unmounted`
+          `Component ${WrappedComponent.name} unmounted`,
         ]);
       };
     }, []);
 
     useEffect(() => {
-        setLogMessages((prevLogMessages) => [
-          ...prevLogMessages,
-          `Component ${WrappedComponent.name} updated`
-        ]);
-      }, [count]);
+      setLogMessages((prevLogMessages) => [
+        ...prevLogMessages,
+        `Component ${WrappedComponent.name} updated`,
+      ]);
+    }, [count]);
 
     const incrementCount = () => {
       setCount(count + 1);
