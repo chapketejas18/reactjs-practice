@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export const RegistrationForm = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    password: '',
-    confirmPassword: ''
+    username: "",
+    password: "",
+    confirmPassword: "",
   });
   const [passwordsMatch, setPasswordsMatch] = useState(true);
 
@@ -12,7 +12,7 @@ export const RegistrationForm = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -20,7 +20,7 @@ export const RegistrationForm = () => {
     e.preventDefault();
     if (formData.password === formData.confirmPassword) {
       // Submit the form
-      console.log('Form submitted:', formData);
+      console.log("Form submitted:", formData);
     } else {
       setPasswordsMatch(false);
     }
@@ -62,9 +62,9 @@ export const RegistrationForm = () => {
         />
       </div>
       {!passwordsMatch && (
-        <div style={{ color: 'red' }}>Passwords do not match!</div>
+        <div style={{ color: "red" }}>Passwords do not match!</div>
       )}
       <button type="submit">Register</button>
     </form>
   );
-}
+};

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export const ControlledToDoList = () => {
-  const [taskInput, setTaskInput] = useState('');
+  const [taskInput, setTaskInput] = useState("");
   const [tasks, setTasks] = useState([]);
 
   const handleInputChange = (event) => {
@@ -9,9 +9,9 @@ export const ControlledToDoList = () => {
   };
 
   const handleAddTask = () => {
-    if (taskInput.trim() !== '') {
+    if (taskInput.trim() !== "") {
       setTasks([...tasks, taskInput]);
-      setTaskInput('');
+      setTaskInput("");
     }
   };
 
@@ -33,4 +33,4 @@ export const ControlledToDoList = () => {
       </ul>
     </div>
   );
-}
+};

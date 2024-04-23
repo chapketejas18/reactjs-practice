@@ -1,4 +1,4 @@
-import "./Button.css"
+import "./Button.css";
 export default function Button({ color, text }) {
   const buttonStyle = {
     backgroundColor: color,
@@ -7,12 +7,14 @@ export default function Button({ color, text }) {
     borderRadius: "5px",
     border: "none",
     cursor: "pointer",
-    marginRight: "10px"
+    marginRight: "10px",
   };
 
   return (
     <div>
-      <button style={buttonStyle} className="button">{text}</button>
+      <button style={buttonStyle} className="button">
+        {text}
+      </button>
     </div>
   );
 }

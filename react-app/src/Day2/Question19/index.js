@@ -1,1 +1,1 @@
-export {CountDown} from "./CountDown";
+export { CountDown } from "./CountDown";

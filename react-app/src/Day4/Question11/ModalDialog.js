@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, Modal, Box, Typography } from "@mui/material";
-import styles from "../assignment4.module.css";
+import "./styles.css";
+
 export const ModalDialog = () => {
   const [open, setOpen] = useState(false);
 
@@ -11,7 +12,7 @@ export const ModalDialog = () => {
     <div>
       <Button onClick={handleOpen}>Open modal</Button>
       <Modal open={open} onClose={handleClose}>
-        <Box className={styles.modal}>
+        <Box>
           <Typography>Text in a modal</Typography>
           <Typography>Hello! This is Modal...</Typography>
         </Box>

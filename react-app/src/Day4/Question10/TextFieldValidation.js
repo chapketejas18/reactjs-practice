@@ -1,5 +1,4 @@
-import { TextField, Button } from "@mui/material";
-import styles from "../assignment4.module.css";
+import { TextField, Button, FormControl } from "@mui/material";
 import { useState } from "react";
 
 export const TextFieldValidation = () => {
@@ -17,8 +16,8 @@ export const TextFieldValidation = () => {
     }
   };
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
-      <div className={styles.div}>
+    <FormControl component="form" onSubmit={(e) => e.preventDefault()}>
+      <div>
         <TextField
           required
           label="UserName"
@@ -38,6 +37,6 @@ export const TextFieldValidation = () => {
         SUBMIT
       </Button>
       <h1>{click ? (click && match ? "valid" : "Invalid") : null}</h1>
-    </form>
+    </FormControl>
   );
 };

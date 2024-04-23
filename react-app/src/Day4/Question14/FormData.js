@@ -1,6 +1,4 @@
-import TextField from "@mui/material/TextField";
-import styles from "../assignment4.module.css";
-import { Button } from "@mui/material";
+import { TextField, Button, FormControl } from "@mui/material";
 import { useFormik } from "formik";
 import { signUpSchema } from "../Question14/schema";
 import { useState } from "react";
@@ -27,8 +25,8 @@ export const FormData = () => {
       },
     });
   return (
-    <form onSubmit={handleSubmit}>
-      <div className={styles.div}>
+    <FormControl component="form" onSubmit={handleSubmit}>
+      <div>
         <div>
           <TextField
             label="Username"
@@ -63,7 +61,7 @@ export const FormData = () => {
             name="PhoneNo"
             autoComplete="off"
             onChange={handleChange}
-            onBlur={handleBlur} 
+            onBlur={handleBlur}
           />
           {errors.PhoneNo && touched.PhoneNo ? <p>{errors.PhoneNo}</p> : null}
         </div>
@@ -121,6 +119,6 @@ export const FormData = () => {
           </p>
         </div>
       )}
-    </form>
+    </FormControl>
   );
 };

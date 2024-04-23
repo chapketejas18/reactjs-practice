@@ -1,10 +1,8 @@
-import React from 'react';
-import SearchFilter from './SearchFilter';
+import React from "react";
+import SearchFilter from "./SearchFilter";
 
 export const DummyData = () => {
-  const items = [
-    'spray', 'elite', 'exuberant', 'destruction', 'present'
-  ];
+  const items = ["spray", "elite", "exuberant", "destruction", "present"];
 
   return (
     <div>

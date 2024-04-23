@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const SearchFilter = ({ data }) => {
-  const [searchQuery, setSearchQuery] = useState('');
-  
+  const [searchQuery, setSearchQuery] = useState("");
+
   const handleInputChange = (e) => {
     setSearchQuery(e.target.value);
   };

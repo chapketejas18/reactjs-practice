@@ -1,1 +1,1 @@
-export {VotingApp} from "./VotingApp";
+export { VotingApp } from "./VotingApp";

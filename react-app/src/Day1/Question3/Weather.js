@@ -7,9 +7,5 @@ export const Weather = ({ count }) => {
   } else {
     message = "It's neither hot nor cold";
   }
-  return (
-    <div>
-      {message}
-    </div>
-  );
+  return <div>{message}</div>;
 };

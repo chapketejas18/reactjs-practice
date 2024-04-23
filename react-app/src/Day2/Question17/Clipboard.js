@@ -6,7 +6,7 @@ export const Clipboard = () => {
   const [value, setValue] = useState("");
 
   return (
-    <div >
+    <div>
       <div>
         <input
           type="text"
@@ -28,4 +28,3 @@ export const Clipboard = () => {
     </div>
   );
 };
-

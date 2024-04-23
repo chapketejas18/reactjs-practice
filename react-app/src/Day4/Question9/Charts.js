@@ -1,8 +1,6 @@
-import styles from "../assignment4.module.css";
-
 const Charts = () => {
   return (
-    <div className={styles.div}>
+    <div>
       Charts data
       <ul>
         <li>chart1</li>

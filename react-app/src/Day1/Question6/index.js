@@ -1,1 +1,1 @@
-export {ButtonColor} from "./ButtonColor";
+export { ButtonColor } from "./ButtonColor";

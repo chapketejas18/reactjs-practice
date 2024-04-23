@@ -1,1 +1,1 @@
-export {FormData} from "./FormData";
+export { FormData } from "./FormData";

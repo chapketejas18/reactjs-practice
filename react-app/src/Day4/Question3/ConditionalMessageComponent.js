@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const MessageComponent = () => {
   return <div>This is the message component.</div>;
 };
 
 export const ConditionalMessageComponent = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const [showMessage, setShowMessage] = useState(false);
 
   const handleInputChange = (e) => {
@@ -13,7 +13,7 @@ export const ConditionalMessageComponent = () => {
   };
 
   const handleButtonClick = () => {
-    if (inputValue.toLowerCase() === 'show') {
+    if (inputValue.toLowerCase() === "show") {
       setShowMessage(true);
     } else {
       setShowMessage(false);

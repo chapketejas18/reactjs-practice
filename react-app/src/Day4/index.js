@@ -1,14 +1,1 @@
-export {InputComponent} from "./Question1"
-export {Form} from "./Question2"
-export {ConditionalMessageComponent} from "./Question3"
-export {RegistrationForm} from "./Question4";
-export {SelectDropdown} from "./Question5";
-export {ControlledToDoList} from "./Question6";
-export {DummyData} from "./Question7";
-export {TemperatureConverter} from "./Question8";
-export {SideBarNavigation} from "./Question9";
-export {TextFieldValidation} from "./Question10";
-export {ModalDialog} from "./Question11";
-export {EnhancedTable} from "./Question12";
-export {FormValidation} from "./Question13";
-export {FormData} from "./Question14";
+export { Day4Component } from "./Day4Component";

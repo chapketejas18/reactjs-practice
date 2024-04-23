@@ -1,1 +1,1 @@
-export {ControlledToDoList} from "./ControlledToDoList"
+export { ControlledToDoList } from "./ControlledToDoList";

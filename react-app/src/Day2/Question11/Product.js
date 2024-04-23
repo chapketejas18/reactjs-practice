@@ -1,5 +1,5 @@
-import React from 'react';
-import { useCart } from './CartContext';
+import React from "react";
+import { useCart } from "./CartContext";
 
 const Product = ({ id, name, price }) => {
   const { addToCart } = useCart();
@@ -8,7 +8,9 @@ const Product = ({ id, name, price }) => {
     <div>
       <h3>{name}</h3>
       <p>${price}</p>
-      <button onClick={() => addToCart({ id, name, price })}>Add to Cart</button>
+      <button onClick={() => addToCart({ id, name, price })}>
+        Add to Cart
+      </button>
     </div>
   );
 };

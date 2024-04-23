@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export const SelectDropdown = () => {
-  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOption, setSelectedOption] = useState("");
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
@@ -19,4 +19,4 @@ export const SelectDropdown = () => {
       {selectedOption && <p>Greet: {selectedOption}</p>}
     </div>
   );
-}
+};

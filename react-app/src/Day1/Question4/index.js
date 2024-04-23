@@ -1,1 +1,1 @@
-export {CounterOne} from "./CounterOne";
+export { CounterOne } from "./CounterOne";

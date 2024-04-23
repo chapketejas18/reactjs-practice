@@ -15,24 +15,30 @@ export const PersonForm = () => {
           id="firstName"
           name="firstName"
           value={firstName}
-          onChange={(event)=>setFirstName(event.target.value)}
-        /><br /><br />
+          onChange={(event) => setFirstName(event.target.value)}
+        />
+        <br />
+        <br />
         <label htmlFor="lastName">Last name:</label>
         <input
           type="text"
           id="lastName"
           name="lastName"
           value={lastName}
-          onChange={(event)=>setLastName(event.target.value)}
-        /><br /><br />
+          onChange={(event) => setLastName(event.target.value)}
+        />
+        <br />
+        <br />
         <label htmlFor="age">Age:</label>
         <input
           type="text"
           id="age"
           name="age"
           value={age}
-          onChange={(event)=>setAge(event.target.value)}
-        /><br /><br />
+          onChange={(event) => setAge(event.target.value)}
+        />
+        <br />
+        <br />
       </form>
       <div>
         <h2>Entered Details:</h2>
@@ -42,4 +48,4 @@ export const PersonForm = () => {
       </div>
     </div>
   );
-}
+};

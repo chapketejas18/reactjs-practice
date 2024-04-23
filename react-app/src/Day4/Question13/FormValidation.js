@@ -1,5 +1,4 @@
 import TextField from "@mui/material/TextField";
-import styles from "../assignment4.module.css";
 import { Button } from "@mui/material";
 import { useFormik } from "formik";
 import { signUpSchema } from "../Question13/schema";
@@ -12,7 +11,6 @@ export const FormValidation = () => {
     Password: "",
     ConfirmPassword: "",
   };
-  //touched is when we are are at particular box it will return boolean value .
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues,
@@ -22,10 +20,9 @@ export const FormValidation = () => {
         action.resetForm();
       },
     });
-  // We are destructuring values from useFormik where values field has what we inserted into an object name initialValues
   return (
     <form onSubmit={handleSubmit}>
-      <div className={styles.div}>
+      <div>
         <div>
           <TextField
             label="Username"
@@ -34,7 +31,7 @@ export const FormValidation = () => {
             name="UserName"
             autoComplete="off"
             onChange={handleChange}
-            onBlur={handleBlur} //When we go away from focus
+            onBlur={handleBlur}
           />
           {errors.UserName && touched.UserName ? (
             <p>{errors.UserName}</p>
@@ -60,7 +57,7 @@ export const FormValidation = () => {
             name="PhoneNo"
             autoComplete="off"
             onChange={handleChange}
-            onBlur={handleBlur} //When we go away from focus
+            onBlur={handleBlur}
           />
 
           {errors.PhoneNo && touched.PhoneNo ? <p>{errors.PhoneNo}</p> : null}

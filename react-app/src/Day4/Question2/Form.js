@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export const Form = () => {
   const [formData, setFormData] = useState({
-    textInput: '',
+    textInput: "",
     checkboxInput: false,
-    radioInput: '',
+    radioInput: "",
   });
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
-    const val = type === 'checkbox' ? checked : value;
+    const val = type === "checkbox" ? checked : value;
 
     setFormData((prevData) => ({
       ...prevData,
@@ -19,7 +19,11 @@ export const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData.textInput, formData.checkboxInput, formData.radioInput);
+    console.log(
+      formData.textInput,
+      formData.checkboxInput,
+      formData.radioInput
+    );
   };
 
   return (
@@ -53,7 +57,7 @@ export const Form = () => {
             type="radio"
             name="radioInput"
             value="option1"
-            checked={formData.radioInput === 'option1'}
+            checked={formData.radioInput === "option1"}
             onChange={handleChange}
           />
         </label>
@@ -63,7 +67,7 @@ export const Form = () => {
             type="radio"
             name="radioInput"
             value="option2"
-            checked={formData.radioInput === 'option2'}
+            checked={formData.radioInput === "option2"}
             onChange={handleChange}
           />
         </label>
@@ -71,4 +75,4 @@ export const Form = () => {
       <button type="submit">Submit</button>
     </form>
   );
-}
+};

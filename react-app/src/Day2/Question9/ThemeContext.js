@@ -9,4 +9,4 @@ export const ThemedContext = () => {
       </ThemeProvider>
     </>
   );
-}
+};

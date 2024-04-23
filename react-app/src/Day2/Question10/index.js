@@ -1,1 +1,1 @@
-export {ChangeLanguage} from "./ChangeLanguage";
+export { ChangeLanguage } from "./ChangeLanguage";

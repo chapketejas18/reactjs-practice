@@ -1,1 +1,1 @@
-export {TextFieldValidation} from "./TextFieldValidation"
+export { TextFieldValidation } from "./TextFieldValidation";
