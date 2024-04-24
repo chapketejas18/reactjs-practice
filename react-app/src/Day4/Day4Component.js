@@ -11,8 +11,7 @@ import { SideBarNavigation } from "./Question9";
 import { TextFieldValidation } from "./Question10";
 import { ModalDialog } from "./Question11";
 import { EnhancedTable } from "./Question12";
-import { FormValidation } from "./Question13";
-import { FormData } from "./Question14";
+import { FormValidation } from "./Question13&14";
 
 export const Day4Component = () => {
   return (
@@ -48,8 +47,6 @@ export const Day4Component = () => {
       <EnhancedTable />
       <hr />
       <FormValidation />
-      <hr />
-      <FormData />
     </div>
   );
 };

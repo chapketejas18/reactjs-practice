@@ -12,10 +12,15 @@ export const ModalDialog = () => {
     <div>
       <Button onClick={handleOpen}>Open modal</Button>
       <Modal open={open} onClose={handleClose}>
-        <Box>
-          <Typography>Text in a modal</Typography>
-          <Typography>Hello! This is Modal...</Typography>
-        </Box>
+        <div className="modal-overlay">
+          <Box className="modal">
+            <Typography>Text in a modal</Typography>
+            <Typography>Hello! This is Modal...</Typography>
+            <Button className="close-button" onClick={handleClose}>
+              Close
+            </Button>
+          </Box>
+        </div>
       </Modal>
     </div>
   );

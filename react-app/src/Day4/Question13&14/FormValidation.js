@@ -1,12 +1,9 @@
-import { TextField, Button, FormControl } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import { Button } from "@mui/material";
 import { useFormik } from "formik";
-import { signUpSchema } from "../Question14/schema";
-import { useState } from "react";
+import { signUpSchema } from "./schema";
 
-export const FormData = () => {
-  const [status, setStatus] = useState(false);
-  const [valueObject, setValue] = useState({});
-
+export const FormValidation = () => {
   const initialValues = {
     UserName: "",
     Email: "",
@@ -19,13 +16,12 @@ export const FormData = () => {
       initialValues,
       validationSchema: signUpSchema,
       onSubmit: (values, action) => {
-        setStatus(true);
-        setValue(values);
+        console.log(values);
         action.resetForm();
       },
     });
   return (
-    <FormControl component="form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div>
         <div>
           <TextField
@@ -63,15 +59,16 @@ export const FormData = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
+
           {errors.PhoneNo && touched.PhoneNo ? <p>{errors.PhoneNo}</p> : null}
         </div>
         <div>
           <TextField
             label="Password"
             variant="filled"
-            type="password"
             value={values.Password}
             name="Password"
+            type="password"
             autoComplete="off"
             onChange={handleChange}
             onBlur={handleBlur}
@@ -83,8 +80,8 @@ export const FormData = () => {
         <div>
           <TextField
             label="ConfirmPassword"
-            type="password"
             variant="filled"
+            type="password"
             value={values.ConfirmPassword}
             name="ConfirmPassword"
             autoComplete="off"
@@ -99,26 +96,6 @@ export const FormData = () => {
           SUBMIT
         </Button>
       </div>
-      {status && (
-        <div>
-          <h2>Form Values:</h2>
-          <p>
-            <strong>Username:</strong> {valueObject.UserName}
-          </p>
-          <p>
-            <strong>Email:</strong> {valueObject.Email}
-          </p>
-          <p>
-            <strong>Phone Number:</strong> {valueObject.PhoneNo}
-          </p>
-          <p>
-            <strong>Password:</strong> {valueObject.Password}
-          </p>
-          <p>
-            <strong>Confirm Password:</strong> {valueObject.ConfirmPassword}
-          </p>
-        </div>
-      )}
-    </FormControl>
+    </form>
   );
 };
