@@ -20,22 +20,17 @@ const Modal = ({ isOpen, onClose, children }) => {
 
 const Modalnew = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const openModal = () => {
-    setIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsOpen(false);
+  const toggleModal = () => {
+    setIsOpen((prev) => !prev);
   };
 
   return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
-      <Modal isOpen={isOpen} onClose={closeModal}>
+      <button onClick={toggleModal}>Open Modal</button>
+      <Modal isOpen={isOpen} onClose={toggleModal}>
         <h2>Modal</h2>
         <p>Hi there!!!!</p>
-        <button onClick={closeModal}>Close Modal</button>
+        <button onClick={toggleModal}>Close Modal</button>
       </Modal>
     </div>
   );

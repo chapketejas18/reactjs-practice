@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 const withDataFetching = (WrappedComponent) => {
   const WithDataFetching = () => {
     const [data, setData] = useState();
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
       const getData = async () => {
@@ -15,13 +17,26 @@ const withDataFetching = (WrappedComponent) => {
             throw new Error("Failed to fetch data");
           }
           setData(response.data);
+          setLoading(false);
         } catch (error) {
           console.error("Error fetching data:", error);
+          setError(true);
+          setLoading(false);
         }
       };
 
       getData();
     }, []);
+
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+    if (error) {
+      return <div>Error fetching data. Please try again later.</div>;
+    }
+    if (!data || data.length === 0) {
+      return <div>No data available at the moment.</div>;
+    }
 
     return <WrappedComponent data={data} />;
   };
