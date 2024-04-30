@@ -1,1 +1,0 @@
-export {ThemedContext} from "./ThemeContext";
