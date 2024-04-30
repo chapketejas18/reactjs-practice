@@ -1,1 +1,0 @@
-export {VotingApp} from "./VotingApp";
