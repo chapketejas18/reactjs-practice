@@ -1,5 +1,6 @@
 import React from "react";
 import usePagination from "./usePagination";
+import "./styles.css";
 
 export const Pagination = () => {
   const { data, loading, nextPage, prevPage, currentPage } = usePagination(15);
@@ -7,7 +8,7 @@ export const Pagination = () => {
   return (
     <>
       {loading ? (
-        <p>Loading...</p>
+        <div className="loader"></div>
       ) : (
         <ul>
           {data.map((item) => (

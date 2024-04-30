@@ -1,8 +1,18 @@
 import React from "react";
-import WithAuth from "./WithAuth";
+import { withAuth } from "./withAuth";
+import { Link } from "react-router-dom";
 
 const About = () => {
-  return <div>About</div>;
+  return (
+    <div>
+      <center>
+        <h1>About</h1>
+      </center>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+    </div>
+  );
 };
 
-export default WithAuth(About);
+export default withAuth(About);

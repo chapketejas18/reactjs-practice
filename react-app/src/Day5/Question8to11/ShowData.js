@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_DATA } from "./Query";
+import "./styles.css";
 
 export const ShowData = () => {
   const { loading, error, data, refetch } = useQuery(GET_DATA);
@@ -11,7 +12,7 @@ export const ShowData = () => {
     refetch();
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div className="loader"></div>;
   if (error)
     return (
       <div>

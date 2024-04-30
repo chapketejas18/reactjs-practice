@@ -29,8 +29,11 @@ const Modalnew = () => {
       <button onClick={toggleModal}>Open Modal</button>
       <Modal isOpen={isOpen} onClose={toggleModal}>
         <h2>Modal</h2>
+        <p>
+          TypeScript code converts to JavaScript, which runs anywhere JavaScript
+          runs: In a browser, on Node.js or Deno and in your apps.
+        </p>
         <p>Hi there!!!!</p>
-        <button onClick={toggleModal}>Close Modal</button>
       </Modal>
     </div>
   );

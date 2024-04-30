@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import "./styles.css";
 
 const withDataFetching = (WrappedComponent) => {
   const WithDataFetching = () => {
@@ -29,7 +30,7 @@ const withDataFetching = (WrappedComponent) => {
     }, []);
 
     if (loading) {
-      return <div>Loading...</div>;
+      return <div className="loader"></div>;
     }
     if (error) {
       return <div>Error fetching data. Please try again later.</div>;
