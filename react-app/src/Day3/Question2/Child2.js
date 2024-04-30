@@ -1,16 +1,13 @@
 import React, { useContext } from "react";
 import { LoginProvider } from "./Parent2";
 import { ThemeProvider } from "./Parent2";
-import styles from "../assignment2.module.css";
+import "./styles.css";
 export const Child2 = () => {
   const { val, state, setVal, setState } = useContext(LoginProvider);
   const { theme, setTheme } = useContext(ThemeProvider);
 
   return (
-    <div
-      className={!theme ? styles.dark : styles.light}
-      color={theme ? styles.light : styles.dark}
-    >
+    <div className={!theme ? "dark" : "light"}>
       <input
         type="text"
         placeholder="User Name"

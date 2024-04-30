@@ -1,1 +1,1 @@
-export {TaskArray} from "./TaskArray";
+export { TaskArray } from "./TaskArray";

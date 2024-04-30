@@ -1,1 +1,1 @@
-export {ParentNew} from "./ParentNew";
+export { ParentNew } from "./ParentNew";

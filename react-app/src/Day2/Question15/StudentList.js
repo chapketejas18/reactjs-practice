@@ -1,11 +1,11 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo } from "react";
 
 export const StudentList = () => {
-  const [students, setStudents] = useState(['Tejas']);
+  const [students, setStudents] = useState(["Tejas"]);
   const memoizedStudents = useMemo(() => students, [students]);
 
   const addStudent = () => {
-    const newStudent = prompt('Enter the name of the new student:');
+    const newStudent = prompt("Enter the name of the new student:");
     if (newStudent) {
       setStudents([...students, newStudent]);
     }
@@ -23,4 +23,3 @@ export const StudentList = () => {
     </div>
   );
 };
-

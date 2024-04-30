@@ -13,4 +13,4 @@ export const AddToCartProducts = () => {
       </CartProvider>
     </>
   );
-}
+};

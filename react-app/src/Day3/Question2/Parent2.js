@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import {Child2} from "./Child2";
+import { Child2 } from "./Child2";
 export const LoginProvider = createContext();
 export const ThemeProvider = createContext();
 

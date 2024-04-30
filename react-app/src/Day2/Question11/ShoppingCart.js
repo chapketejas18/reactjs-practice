@@ -1,5 +1,5 @@
-import React from 'react';
-import { useCart } from './CartContext';
+import React from "react";
+import { useCart } from "./CartContext";
 
 const ShoppingCart = () => {
   const { cart, removeFromCart, calculateTotalPrice } = useCart();
@@ -7,9 +7,11 @@ const ShoppingCart = () => {
   return (
     <div>
       <h2>Shopping Cart</h2>
-      {cart.map(item => (
+      {cart.map((item) => (
         <div key={item.id}>
-          <p>{item.name} - ${item.price}</p>
+          <p>
+            {item.name} - ${item.price}
+          </p>
           <button onClick={() => removeFromCart(item.id)}>Remove</button>
         </div>
       ))}

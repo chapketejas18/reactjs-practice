@@ -1,14 +1,14 @@
-import useTimer from './useTimer'
+import useTimer from "./useTimer";
 
 export const CountDown = () => {
-  const initialDuration = 180
+  const initialDuration = 180;
   const { duration, isRunning, startTimer, pauseTimer, resetTimer } =
-    useTimer(initialDuration)
+    useTimer(initialDuration);
   const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60)
-    const remainingSeconds = seconds % 60
-    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`
-  }
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+  };
 
   return (
     <div>
@@ -24,5 +24,5 @@ export const CountDown = () => {
         <button onClick={resetTimer}>Reset</button>
       </div>
     </div>
-  )
-}
+  );
+};

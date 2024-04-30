@@ -1,1 +1,1 @@
-export {EmployeeSalary} from "./EmployeeSalary";
+export { EmployeeSalary } from "./EmployeeSalary";

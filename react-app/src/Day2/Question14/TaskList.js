@@ -1,20 +1,17 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback } from "react";
 
 const TaskList = ({ tasks }) => {
   const [completedTasks, setCompletedTasks] = useState([]);
 
-  const handleCompleteTask = useCallback(
-    (taskId) => {
-      setCompletedTasks((prevCompletedTasks) => {
-        if (prevCompletedTasks.includes(taskId)) {
-          return prevCompletedTasks.filter((id) => id !== taskId);
-        } else {
-          return [...prevCompletedTasks, taskId];
-        }
-      });
-    },
-    []
-  );
+  const handleCompleteTask = useCallback((taskId) => {
+    setCompletedTasks((prevCompletedTasks) => {
+      if (prevCompletedTasks.includes(taskId)) {
+        return prevCompletedTasks.filter((id) => id !== taskId);
+      } else {
+        return [...prevCompletedTasks, taskId];
+      }
+    });
+  }, []);
 
   return (
     <div>
@@ -22,11 +19,17 @@ const TaskList = ({ tasks }) => {
       <ul>
         {tasks.map((task) => (
           <li key={task.id}>
-            <span style={{ textDecoration: completedTasks.includes(task.id) ? 'line-through' : 'none' }}>
+            <span
+              style={{
+                textDecoration: completedTasks.includes(task.id)
+                  ? "line-through"
+                  : "none",
+              }}
+            >
               {task.name}
             </span>
             <button onClick={() => handleCompleteTask(task.id)}>
-              {completedTasks.includes(task.id) ? 'Uncomplete' : 'Complete'}
+              {completedTasks.includes(task.id) ? "Uncomplete" : "Complete"}
             </button>
           </li>
         ))}

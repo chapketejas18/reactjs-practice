@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export const RandomNumberGenerator = () => {
   const [randomNumber, setRandomNumber] = useState(generateRandomNumber());
@@ -15,7 +15,9 @@ export const RandomNumberGenerator = () => {
   return (
     <div>
       <h2>Random Number: {randomNumber}</h2>
-      <button onClick={handleGenerateRandomNumber}>Generate New Random Number</button>
+      <button onClick={handleGenerateRandomNumber}>
+        Generate New Random Number
+      </button>
     </div>
   );
 };

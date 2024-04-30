@@ -8,4 +8,4 @@ export const ButtonColor = () => {
       <Button color="green" text="Ok" />
     </div>
   );
-}
+};

@@ -1,11 +1,13 @@
-import React, { useState, useContext, createContext } from 'react';
+import React, { useState, useContext, createContext } from "react";
 
 const LanguageContext = createContext();
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('english');
+  const [language, setLanguage] = useState("english");
 
   const changeLanguage = () => {
-    setLanguage(prevLanguage => (prevLanguage === 'english' ? 'spanish' : 'english'));
+    setLanguage((prevLanguage) =>
+      prevLanguage === "english" ? "spanish" : "english"
+    );
   };
 
   return (

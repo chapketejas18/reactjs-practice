@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ProductList from "./ProductList";
-import {ProductDetail} from "./ProductDetail";
+import { ProductDetail } from "./ProductDetail";
 import { createContext } from "react";
 export const ProductContext = createContext();
 
@@ -30,4 +30,4 @@ export const ProductApp = () => {
       </Router>
     </ProductContext.Provider>
   );
-}
+};

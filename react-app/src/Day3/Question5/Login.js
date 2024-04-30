@@ -1,18 +1,18 @@
-import { useContext, useState } from 'react'
-import { MyContext } from './Main2'
-import { useNavigate } from 'react-router-dom'
+import { useContext, useState } from "react";
+import { MyContext } from "./Main2";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const { auth, setAuth } = useContext(MyContext)
-  const navigate = useNavigate()
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { auth, setAuth } = useContext(MyContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    setAuth({ ...auth, username: username, password: password })
-    navigate('/dashboard')
-  }
+    e.preventDefault();
+    setAuth({ ...auth, username: username, password: password });
+    navigate("/dashboard");
+  };
 
   return (
     <div>
@@ -31,7 +31,7 @@ const Login = () => {
       />
       <button onClick={handleSubmit}>Login</button>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

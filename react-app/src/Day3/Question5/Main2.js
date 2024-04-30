@@ -1,15 +1,15 @@
-import React, { createContext, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import Authenticate from './Authenticate'
-import Dashboard from './Dashboard/Dashboard'
-import Profile from './Dashboard/Profile'
-import Settings from './Dashboard/Settings'
-import Login from './Login'
+import React, { createContext, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Authenticate from "./Authenticate";
+import Dashboard from "./Dashboard/Dashboard";
+import Profile from "./Dashboard/Profile";
+import Settings from "./Dashboard/Settings";
+import Login from "./Login";
 
-export const MyContext = createContext()
+export const MyContext = createContext();
 
 export const Main2 = () => {
-  const [auth, setAuth] = useState({ username: '', password: '' })
+  const [auth, setAuth] = useState({ username: "", password: "" });
 
   return (
     <MyContext.Provider value={{ auth, setAuth }}>
@@ -29,5 +29,5 @@ export const Main2 = () => {
         </Routes>
       </Router>
     </MyContext.Provider>
-  )
-}
+  );
+};

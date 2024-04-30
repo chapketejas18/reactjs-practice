@@ -1,1 +1,1 @@
-export {MainCopy} from "./MainCopy";
+export { MainCopy } from "./MainCopy";

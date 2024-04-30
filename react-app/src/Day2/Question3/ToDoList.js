@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export const ToDoList = () => {
   const [todos, setTodos] = useState([]);
@@ -7,21 +7,21 @@ export const ToDoList = () => {
     const newTodo = {
       id: todos.length + 1,
       text: `Todo ${todos.length + 1}`,
-      completed: false
+      completed: false,
     };
     setTodos([...todos, newTodo]);
   };
 
   const toggleCompletion = (id) => {
     setTodos(
-      todos.map(todo =>
+      todos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
   };
 
   const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id));
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -29,14 +29,20 @@ export const ToDoList = () => {
       <h2>To Do List</h2>
       <button onClick={addTodo}>Add Todo</button>
       <ul>
-        {todos.map(todo => (
+        {todos.map((todo) => (
           <li key={todo.id}>
             <input
               type="checkbox"
               checked={todo.completed}
               onChange={() => toggleCompletion(todo.id)}
             />
-            <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>{todo.text}</span>
+            <span
+              style={{
+                textDecoration: todo.completed ? "line-through" : "none",
+              }}
+            >
+              {todo.text}
+            </span>
             <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </li>
         ))}
