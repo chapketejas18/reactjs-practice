@@ -14,7 +14,8 @@ export const LoginForm = () => {
       {!loggedin && (
         <div>
           <h1>Login Form</h1>
-          <input data-testid="username"
+          <input
+            data-testid="username"
             type="text"
             placeholder="Enter Username"
             onChange={(e) => {
@@ -22,7 +23,8 @@ export const LoginForm = () => {
             }}
           />
           <br />
-          <input data-testid="password"
+          <input
+            data-testid="password"
             type="text"
             placeholder="Enter Password"
             onChange={(e) => {

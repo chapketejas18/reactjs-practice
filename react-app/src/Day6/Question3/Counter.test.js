@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { Counter } from "./Counter";
+import "@testing-library/jest-dom/extend-expect";
 
 describe("Counter component", () => {
   test("should render Counter component correctly", () => {

@@ -24,11 +24,8 @@ export const Day6Component = () => {
           </ErrorBoundary>
         </Suspense>
       </BrowserRouter>
-
       <Counter />
-
       <LoginForm />
-
       <UserProfile
         name={"Tejas"}
         username={"tejas18"}
@@ -36,7 +33,6 @@ export const Day6Component = () => {
         address={"Akola"}
         contact={9960733381}
       />
-
       <ShowModal />
     </>
   );
