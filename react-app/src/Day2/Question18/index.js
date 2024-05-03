@@ -1,1 +1,0 @@
-export { UserPreference } from "./UserPreference";

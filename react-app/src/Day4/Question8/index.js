@@ -1,1 +1,0 @@
-export { TemperatureConverter } from "./TemperatureConverter";

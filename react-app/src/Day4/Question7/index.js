@@ -1,1 +1,0 @@
-export { DummyData } from "./DummyData";
