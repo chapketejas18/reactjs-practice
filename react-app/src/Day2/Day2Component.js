@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Counter } from "./Question1";
 import { PersonForm } from "./Question2";
 import { ToDoList } from "./Question3";
@@ -19,52 +21,52 @@ import { Clipboard } from "./Question17";
 import { UserPreference } from "./Question18";
 import { CountDown } from "./Question19";
 
+const day2Components = [
+  { name: "Counter", component: <Counter /> },
+  { name: "Person Form", component: <PersonForm /> },
+  { name: "ToDo List", component: <ToDoList /> },
+  { name: "Random Number Generator", component: <RandomNumberGenerator /> },
+  { name: "Counter With Step", component: <CounterWithStep /> },
+  { name: "Clock", component: <Clock /> },
+  { name: "Notification", component: <Notification /> },
+  { name: "Slide Show", component: <SlideShow /> },
+  { name: "Themed Context", component: <ThemedContext /> },
+  { name: "Change Language", component: <ChangeLanguage /> },
+  { name: "Add To Cart Products", component: <AddToCartProducts /> },
+  { name: "Voting App", component: <VotingApp /> },
+  { name: "Parent", component: <Parent /> },
+  { name: "Tasks", component: <Tasks /> },
+  { name: "Student List", component: <StudentList /> },
+  { name: "Employee Salary", component: <EmployeeSalary /> },
+  { name: "Clipboard", component: <Clipboard /> },
+  { name: "User Preference", component: <UserPreference /> },
+  { name: "Count Down", component: <CountDown /> },
+];
+
 export const Day2Component = () => {
+  const [showComponent, setShowComponent] = useState({});
+
+  const toggleComponent = (index) => {
+    setShowComponent({ ...showComponent, [index]: !showComponent[index] });
+  };
+
   return (
     <div>
-      <center>
-        <h1>
-          ------------------------------------------------------------------Day
-          2----------------------------------------------------------------------------
-        </h1>
-      </center>
-      <Counter />
-      <hr />
-      <PersonForm />
-      <hr />
-      <ToDoList />
-      <hr />
-      <RandomNumberGenerator />
-      <hr />
-      <CounterWithStep />
-      <hr />
-      <Clock />
-      <hr />
-      <Notification />
-      <hr />
-      <SlideShow />
-      <hr />
-      <ThemedContext />
-      <hr />
-      <ChangeLanguage />
-      <hr />
-      <AddToCartProducts />
-      <hr />
-      <VotingApp />
-      <hr />
-      <Parent />
-      <hr />
-      <Tasks />
-      <hr />
-      <StudentList />
-      <hr />
-      <EmployeeSalary />
-      <hr />
-      <Clipboard />
-      <hr />
-      <UserPreference />
-      <hr />
-      <CountDown />
+      {day2Components.map((item, index) => (
+        <Accordion key={index}>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls={`panel${index + 1}-content`}
+            id={`panel${index + 1}-header`}
+            onClick={() => toggleComponent(index)}
+          >
+            {item.name}
+          </AccordionSummary>
+          <AccordionDetails>
+            {showComponent[index] && item.component}
+          </AccordionDetails>
+        </Accordion>
+      ))}
     </div>
   );
 };
