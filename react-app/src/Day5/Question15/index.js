@@ -1,0 +1,1 @@
+export {MyComponentWithLogger} from "./MyComponentWithLogger";
