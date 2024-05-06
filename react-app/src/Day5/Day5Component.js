@@ -32,11 +32,11 @@ export const Day5Component = () => {
       <hr />
       <Modalnew />
       <hr />
+      <RouteApp />
+      <hr />
       <MyComponentWithLogger />
       <hr />
       <DisplayData />
-      <hr />
-      <RouteApp />
     </div>
   );
 };

@@ -1,1 +1,1 @@
-export { default as Modalnew } from "./Modalnew";
+export { Modalnew } from "./Modalnew";
