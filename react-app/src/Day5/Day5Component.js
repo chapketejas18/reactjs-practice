@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "./Question8to11/Client";
 import { Pagination } from "./Question1to4";
@@ -11,6 +8,7 @@ import { Modalnew } from "./Question13";
 import { MyComponentWithLogger } from "./Question15";
 import { DisplayData } from "./Question16";
 import { RouteApp } from "./Question14";
+import GenericAccordion from "../helper/GenericAccordian";
 
 const day5Components = [
   { name: "Pagination", component: <Pagination /> },
@@ -31,28 +29,5 @@ const day5Components = [
 ];
 
 export const Day5Component = () => {
-  const [showComponent, setShowComponent] = useState({});
-  const toggleComponent = (index) => {
-    setShowComponent({ ...showComponent, [index]: !showComponent[index] });
-  };
-
-  return (
-    <div>
-      {day5Components.map((item, index) => (
-        <Accordion key={index}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls={`panel${index + 1}-content`}
-            id={`panel${index + 1}-header`}
-            onClick={() => toggleComponent(index)}
-          >
-            {item.name}
-          </AccordionSummary>
-          <AccordionDetails>
-            {showComponent[index] && item.component}
-          </AccordionDetails>
-        </Accordion>
-      ))}
-    </div>
-  );
+  return <GenericAccordion components={day5Components} />;
 };

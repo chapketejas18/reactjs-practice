@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { InputComponent } from "./Question1";
 import { Form } from "./Question2";
 import { ConditionalMessageComponent } from "./Question3";
@@ -14,6 +11,7 @@ import { TextFieldValidation } from "./Question10";
 import { ModalDialog } from "./Question11";
 import { EnhancedTable } from "./Question12";
 import { FormValidation } from "./Question13&14";
+import GenericAccordion from "../helper/GenericAccordian";
 
 const day4Components = [
   { name: "Input Component", component: <InputComponent /> },
@@ -35,28 +33,5 @@ const day4Components = [
 ];
 
 export const Day4Component = () => {
-  const [showComponent, setShowComponent] = useState({});
-  const toggleComponent = (index) => {
-    setShowComponent({ ...showComponent, [index]: !showComponent[index] });
-  };
-
-  return (
-    <div>
-      {day4Components.map((item, index) => (
-        <Accordion key={index}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls={`panel${index + 1}-content`}
-            id={`panel${index + 1}-header`}
-            onClick={() => toggleComponent(index)}
-          >
-            {item.name}
-          </AccordionSummary>
-          <AccordionDetails>
-            {showComponent[index] && item.component}
-          </AccordionDetails>
-        </Accordion>
-      ))}
-    </div>
-  );
+  return <GenericAccordion components={day4Components} />;
 };

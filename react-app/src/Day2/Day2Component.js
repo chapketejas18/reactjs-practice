@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Counter } from "./Question1";
 import { PersonForm } from "./Question2";
 import { ToDoList } from "./Question3";
@@ -20,6 +17,7 @@ import { EmployeeSalary } from "./Question16";
 import { Clipboard } from "./Question17";
 import { UserPreference } from "./Question18";
 import { CountDown } from "./Question19";
+import GenericAccordion from "../helper/GenericAccordian";
 
 const day2Components = [
   { name: "Counter", component: <Counter /> },
@@ -44,29 +42,5 @@ const day2Components = [
 ];
 
 export const Day2Component = () => {
-  const [showComponent, setShowComponent] = useState({});
-
-  const toggleComponent = (index) => {
-    setShowComponent({ ...showComponent, [index]: !showComponent[index] });
-  };
-
-  return (
-    <div>
-      {day2Components.map((item, index) => (
-        <Accordion key={index}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls={`panel${index + 1}-content`}
-            id={`panel${index + 1}-header`}
-            onClick={() => toggleComponent(index)}
-          >
-            {item.name}
-          </AccordionSummary>
-          <AccordionDetails>
-            {showComponent[index] && item.component}
-          </AccordionDetails>
-        </Accordion>
-      ))}
-    </div>
-  );
+  return <GenericAccordion components={day2Components} />;
 };
