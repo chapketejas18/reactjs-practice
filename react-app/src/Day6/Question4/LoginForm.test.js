@@ -8,21 +8,29 @@ describe("User Login Form", () => {
     const element = screen.getByText("Login Form");
     expect(element).toBeInTheDocument();
   });
-});
 
-test("Should username and password fields  of component to be fillied", () => {
-  render(<LoginForm />);
-  const usernameInput = screen.getByTestId("username");
-  const passwordInput = screen.getByTestId("password");
+  test("Should display error message if username or password is not filled", () => {
+    render(<LoginForm />);
+    const submitButton = screen.getByText("Submit");
+    fireEvent.click(submitButton);
+    const errorMessage = screen.getByText(
+      "Username and password are required."
+    );
+    expect(errorMessage).toBeInTheDocument();
+  });
 
-  fireEvent.change(usernameInput, { target: { value: "user" } });
-  fireEvent.change(passwordInput, { target: { value: "pass" } });
-});
+  test("Should submit form when both username and password fields are filled", () => {
+    render(<LoginForm />);
+    const usernameInput = screen.getByTestId("username");
+    const passwordInput = screen.getByTestId("password");
 
-test("Submit button should click on component correctly", () => {
-  render(<LoginForm />);
-  const submitButton = screen.getByText("Submit");
-  fireEvent.click(submitButton);
-  const checkMessage = screen.getByText("Submitted sucessfully....");
-  expect(checkMessage).toBeInTheDocument();
+    fireEvent.change(usernameInput, { target: { value: "user" } });
+    fireEvent.change(passwordInput, { target: { value: "pass" } });
+
+    const submitButton = screen.getByText("Submit");
+    fireEvent.click(submitButton);
+
+    const successMessage = screen.getByText("Submitted successfully....");
+    expect(successMessage).toBeInTheDocument();
+  });
 });
