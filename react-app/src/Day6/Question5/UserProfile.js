@@ -2,8 +2,11 @@ import React from "react";
 import { InputLabel } from "@mui/material";
 
 export const UserProfile = (data) => {
+  if (!data) {
+    return <div>No data available for user profile.</div>;
+  }
   return (
-    <div style={{}}>
+    <div>
       <h1>User Profile</h1>
       <InputLabel>Full Name:{data.name}</InputLabel>
       <InputLabel>Username:{data.username}</InputLabel>

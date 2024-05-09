@@ -1,0 +1,1 @@
+export { Modalnew } from "./Modalnew";

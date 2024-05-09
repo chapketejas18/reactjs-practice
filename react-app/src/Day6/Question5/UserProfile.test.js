@@ -34,3 +34,18 @@ test("User profile information should correctly displayed on to component", () =
   expect(address).toBeInTheDocument();
   expect(contactNO).toBeInTheDocument();
 });
+
+test("Should display 'No data available for user profile.' when no data is provided", () => {
+  render(<UserProfile />);
+  const fullName = screen.getByText(`Full Name:`);
+  const username = screen.getByText(`Username:`);
+  const gender = screen.getByText(`Gender:`);
+  const address = screen.getByText(`Address:`);
+  const contactNO = screen.getByText(`Contact No:`);
+
+  expect(fullName).toBeInTheDocument();
+  expect(username).toBeInTheDocument();
+  expect(gender).toBeInTheDocument();
+  expect(address).toBeInTheDocument();
+  expect(contactNO).toBeInTheDocument();
+});

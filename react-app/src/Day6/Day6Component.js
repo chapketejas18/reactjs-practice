@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ErrorBoundary } from "react-error-boundary";
+import { ErrorBoundary } from "./Question1/ErrorBoundary";
 import { Suspense, lazy } from "react";
 import { Home } from "./Question1";
 import { Counter } from "./Question3";
@@ -13,9 +13,15 @@ const Profile = lazy(() => import("./Question1/Profile"));
 export const Day6Component = () => {
   return (
     <>
+      <center>
+        <h1>
+          ------------------------------------------------------------------Day
+          6----------------------------------------------------------------------------
+        </h1>
+      </center>
       <BrowserRouter>
         <Suspense fallback={<div>Wait Components are Loading...</div>}>
-          <ErrorBoundary fallback={<p>Something went wrong...</p>}>
+          <ErrorBoundary>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/dashboard" element={<Dashboard />} />
@@ -24,8 +30,11 @@ export const Day6Component = () => {
           </ErrorBoundary>
         </Suspense>
       </BrowserRouter>
+      <hr />
       <Counter />
+      <hr />
       <LoginForm />
+      <hr />
       <UserProfile
         name={"Tejas"}
         username={"tejas18"}
@@ -33,6 +42,8 @@ export const Day6Component = () => {
         address={"Akola"}
         contact={9960733381}
       />
+      <UserProfile />
+      <hr />
       <ShowModal />
     </>
   );

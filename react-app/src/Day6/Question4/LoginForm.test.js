@@ -24,7 +24,7 @@ describe("User Login Form", () => {
     const usernameInput = screen.getByTestId("username");
     const passwordInput = screen.getByTestId("password");
 
-    fireEvent.change(usernameInput, { target: { value: "user" } });
+    fireEvent.change(usernameInput, { target: { value: "tejas" } });
     fireEvent.change(passwordInput, { target: { value: "pass" } });
 
     const submitButton = screen.getByText("Submit");
@@ -32,5 +32,38 @@ describe("User Login Form", () => {
 
     const successMessage = screen.getByText("Submitted successfully....");
     expect(successMessage).toBeInTheDocument();
+  });
+
+  test("Should display error message for incorrect username or password", () => {
+    render(<LoginForm />);
+    const usernameInput = screen.getByTestId("username");
+    const passwordInput = screen.getByTestId("password");
+
+    fireEvent.change(usernameInput, { target: { value: "abc" } });
+    fireEvent.change(passwordInput, { target: { value: "anfjfgn" } });
+
+    const submitButton = screen.getByText("Submit");
+    fireEvent.click(submitButton);
+
+    const errorMessage = screen.getByText("Invalid username or password.");
+    expect(errorMessage).toBeInTheDocument();
+  });
+
+  test("Should log out when logout button is clicked", () => {
+    render(<LoginForm />);
+    const usernameInput = screen.getByTestId("username");
+    const passwordInput = screen.getByTestId("password");
+
+    fireEvent.change(usernameInput, { target: { value: "tejas" } });
+    fireEvent.change(passwordInput, { target: { value: "pass" } });
+
+    const submitButton = screen.getByText("Submit");
+    fireEvent.click(submitButton);
+
+    const logoutButton = screen.getByText("Logout");
+    fireEvent.click(logoutButton);
+
+    const loginFormHeader = screen.getByText("Login Form");
+    expect(loginFormHeader).toBeInTheDocument();
   });
 });
