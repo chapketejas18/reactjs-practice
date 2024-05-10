@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ErrorBoundary } from "./Question1/ErrorBoundary";
+import { ErrorBoundary } from "react-error-boundary";
 import { Suspense, lazy } from "react";
 import { Home } from "./Question1";
 import { Counter } from "./Question3";
@@ -21,7 +21,7 @@ export const Day6Component = () => {
       </center>
       <BrowserRouter>
         <Suspense fallback={<div>Wait Components are Loading...</div>}>
-          <ErrorBoundary>
+          <ErrorBoundary fallback={<h1>jklnscjsdnjsnvjsdnvjnfjvnfn</h1>}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/dashboard" element={<Dashboard />} />
