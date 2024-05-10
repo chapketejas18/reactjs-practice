@@ -13,7 +13,6 @@ const LoginPage = ({ setIsLoggedIn }) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    // Check if user is already logged in (stored in localStorage)
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     if (isLoggedIn === "true") {
       setIsLoggedIn(true);
@@ -21,7 +20,6 @@ const LoginPage = ({ setIsLoggedIn }) => {
   }, [setIsLoggedIn]);
 
   const handleLogin = () => {
-    // Authentication logic
     if (username === "tejas" && password === "pass") {
       // Save login status to localStorage
       localStorage.setItem("isLoggedIn", "true");
