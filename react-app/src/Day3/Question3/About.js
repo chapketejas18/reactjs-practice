@@ -1,15 +1,10 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 
-const About = () => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      navigate("/");
-    }, 3000);
-    return () => clearTimeout(timer);
-  });
-  return <div>About</div>;
-};
+const About = () => (
+  <div>
+    <h1>About Us</h1>
+    <p>This is the About Us page content.</p>
+  </div>
+);
 
 export default About;

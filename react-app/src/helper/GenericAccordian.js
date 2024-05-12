@@ -1,29 +1,40 @@
-import { useState } from "react";
-import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import * as React from "react";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const GenericAccordion = ({ components }) => {
-  const [showComponent, setShowComponent] = useState({});
+  const [expanded, setExpanded] = React.useState(false);
 
-  const toggleComponent = (index) => {
-    setShowComponent({ ...showComponent, [index]: !showComponent[index] });
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
   };
 
   return (
     <div>
-      {components.map((item, index) => (
-        <Accordion key={index}>
+      {components.map((item) => (
+        <Accordion
+          key={item.name}
+          expanded={expanded === item.name}
+          onChange={handleChange(item.name)}
+        >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
-            aria-controls={`panel${index + 1}-content`}
-            id={`panel${index + 1}-header`}
-            onClick={() => toggleComponent(index)}
+            aria-controls={`${item.name}bh-content`}
+            id={`${item.name}bh-header`}
           >
-            {item.name}
+            <Typography sx={{ width: "33%", flexShrink: 0 }}>
+              {item.name}
+            </Typography>
+            {item.description && (
+              <Typography sx={{ color: "text.secondary" }}>
+                {item.description}
+              </Typography>
+            )}
           </AccordionSummary>
-          <AccordionDetails>
-            {showComponent[index] && item.component}
-          </AccordionDetails>
+          <AccordionDetails>{item.component}</AccordionDetails>
         </Accordion>
       ))}
     </div>

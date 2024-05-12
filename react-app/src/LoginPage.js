@@ -21,7 +21,6 @@ const LoginPage = ({ setIsLoggedIn }) => {
 
   const handleLogin = () => {
     if (username === "tejas" && password === "pass") {
-      // Save login status to localStorage
       localStorage.setItem("isLoggedIn", "true");
       setIsLoggedIn(true);
     } else {

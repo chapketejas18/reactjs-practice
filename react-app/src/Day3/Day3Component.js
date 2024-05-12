@@ -12,13 +12,13 @@ export const Day3Component = () => {
       <hr />
       <Parent2 />
       <hr />
-      <Wrapper />
+      {/* <Wrapper />
       <hr />
       <MainCopy />
       <hr />
       <Main2 />
       <hr />
-      <ProductApp />
+      <ProductApp /> */}
     </div>
   );
 };
