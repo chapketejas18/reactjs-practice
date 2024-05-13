@@ -1,24 +1,25 @@
+import GenericAccordion from "../helper/GenericAccordian";
 import { ParentNew } from "./Question1";
 import { Parent2 } from "./Question2";
-import { Wrapper } from "./Question3";
-import { MainCopy } from "./Question4";
-import { Main2 } from "./Question5";
-import { ProductApp } from "./Question6";
+
+const components = [
+  {
+    name: "Parent 1",
+    component: <ParentNew />,
+    description: "Component to display username after submitting username.",
+  },
+  {
+    name: "Parent 2",
+    component: <Parent2 />,
+    description:
+      "Component to display username after submitting username and has button to manage dark and light theme.",
+  },
+];
 
 export const Day3Component = () => {
   return (
     <div>
-      <ParentNew />
-      <hr />
-      <Parent2 />
-      <hr />
-      {/* <Wrapper />
-      <hr />
-      <MainCopy />
-      <hr />
-      <Main2 />
-      <hr />
-      <ProductApp /> */}
+      <GenericAccordion components={components} />
     </div>
   );
 };
