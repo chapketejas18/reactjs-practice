@@ -23,7 +23,7 @@ const day5Components = [
   },
   { name: "Buttons Color", component: <ButtonsColor /> },
   { name: "Modal", component: <Modalnew /> },
-  { name: "Route App", component: <RouteApp /> },
+  // { name: "Route App", component: <RouteApp /> },
   { name: "My Component With Logger", component: <MyComponentWithLogger /> },
   { name: "Display Data", component: <DisplayData /> },
 ];

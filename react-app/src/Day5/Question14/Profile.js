@@ -9,7 +9,7 @@ const Profile = () => {
         <h1>Profile</h1>
       </center>
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/homeapp">Home</Link>
       </li>
     </div>
   );

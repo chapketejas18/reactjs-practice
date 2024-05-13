@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import { useNavigate } from "react-router-dom";
 import { Day1Component } from "./Day1";
 import { Day2Component } from "./Day2";
 import { Day3Component } from "./Day3";
@@ -26,7 +27,8 @@ const AssignmentsPage = ({ setIsLoggedIn }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [dashboardAnchorEl, setDashboardAnchorEl] = useState(null);
   const [profileAnchorEl, setProfileAnchorEl] = useState(null);
-  const [selectedDay, setSelectedDay] = useState(null);
+  const [selectedDay, setSelectedDay] = useState(0);
+  const navigate = useNavigate();
 
   const handleDrawerOpen = () => {
     setDrawerOpen(true);
@@ -85,7 +87,9 @@ const AssignmentsPage = ({ setIsLoggedIn }) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Assignments
+            {selectedDay !== null
+              ? dayComponents[selectedDay].name
+              : "Assignments"}
           </Typography>
 
           <div
@@ -114,9 +118,13 @@ const AssignmentsPage = ({ setIsLoggedIn }) => {
               open={Boolean(dashboardAnchorEl)}
               onClose={handleDashboardClose}
             >
-              <MenuItem>About Us</MenuItem>
-              <MenuItem>Settings</MenuItem>
-              <MenuItem>Home</MenuItem>
+              <MenuItem onClick={() => navigate("/about")}>About Us</MenuItem>
+              <MenuItem onClick={() => navigate("/settings")}>
+                Settings
+              </MenuItem>
+              <MenuItem onClick={() => navigate("/products")}>
+                Products
+              </MenuItem>
             </Menu>
             <Divider
               orientation="vertical"
@@ -143,7 +151,7 @@ const AssignmentsPage = ({ setIsLoggedIn }) => {
             open={Boolean(profileAnchorEl)}
             onClose={handleProfileClose}
           >
-            <MenuItem>Profile</MenuItem>
+            <MenuItem onClick={() => navigate("/profile")}>Profile</MenuItem>
             <MenuItem onClick={handleLogout}>Logout</MenuItem>
           </Menu>
         </Toolbar>
@@ -151,15 +159,47 @@ const AssignmentsPage = ({ setIsLoggedIn }) => {
       <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerClose}>
         <List>
           {dayComponents.map((item, index) => (
-            <ListItem key={index} onClick={() => handleDaySelect(index)}>
+            <ListItem
+              key={index}
+              onClick={() => handleDaySelect(index)}
+              sx={{
+                backgroundColor:
+                  selectedDay === index ? "lightgrey" : "inherit",
+              }}
+            >
               <ListItemText primary={item.name} />
             </ListItem>
           ))}
         </List>
         <Divider />
       </Drawer>
-      <Box ml={2} mt={2}>
+      <Box ml={2} mt={2} mb={5} position="relative">
         {selectedDay !== null && dayComponents[selectedDay].component}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "-50px",
+            right: "16px",
+          }}
+        >
+          <Button
+            onClick={() =>
+              setSelectedDay((prev) =>
+                prev === 0 ? dayComponents.length - 1 : prev - 1
+              )
+            }
+            sx={{ marginRight: "8px" }}
+          >
+            Prev
+          </Button>
+          <Button
+            onClick={() =>
+              setSelectedDay((prev) => (prev + 1) % dayComponents.length)
+            }
+          >
+            Next
+          </Button>
+        </Box>
       </Box>
     </Box>
   );

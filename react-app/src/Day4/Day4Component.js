@@ -25,7 +25,7 @@ const day4Components = [
   { name: "Controlled ToDo List", component: <ControlledToDoList /> },
   { name: "Dummy Data", component: <DummyData /> },
   { name: "Temperature Converter", component: <TemperatureConverter /> },
-  { name: "SideBar Navigation", component: <SideBarNavigation /> },
+  // { name: "SideBar Navigation", component: <SideBarNavigation /> },
   { name: "Text Field Validation", component: <TextFieldValidation /> },
   { name: "Modal Dialog", component: <ModalDialog /> },
   { name: "Enhanced Table", component: <EnhancedTable /> },

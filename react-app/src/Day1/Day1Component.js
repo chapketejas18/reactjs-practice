@@ -19,7 +19,8 @@ const components = [
   {
     name: "Counter",
     component: <CounterOne />,
-    description: "This component counts up from 1.",
+    description:
+      "This component increments and decrement count by 1 and displays message accordingly.",
   },
   {
     name: "Task Array",
@@ -29,7 +30,7 @@ const components = [
   {
     name: "Button Color",
     component: <ButtonColor />,
-    description: "This component changes the color of a button.",
+    description: "This component has 3 different color buttons.",
   },
 ];
 

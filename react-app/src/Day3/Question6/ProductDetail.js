@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { ProductContext } from "./ProductApp";
+import { ProductContext } from "./ProductContext";
 
-export const ProductDetail = () => {
+const ProductDetail = () => {
   const { products } = useContext(ProductContext);
   const { id } = useParams();
-
   const product = products.find((item) => item.id === Number(id));
 
   return (
@@ -24,3 +23,5 @@ export const ProductDetail = () => {
     </div>
   );
 };
+
+export default ProductDetail;

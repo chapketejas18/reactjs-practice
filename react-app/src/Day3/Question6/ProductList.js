@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { ProductContext } from "./ProductApp";
+import { ProductContext } from "./ProductContext";
 
-function ProductList() {
+const ProductList = () => {
   const { products } = useContext(ProductContext);
 
   return (
@@ -17,6 +17,6 @@ function ProductList() {
       </ul>
     </div>
   );
-}
+};
 
 export default ProductList;

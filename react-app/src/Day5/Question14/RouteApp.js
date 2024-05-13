@@ -8,9 +8,9 @@ export const RouteApp = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/homeapp" element={<Home />} />
+        <Route path="/aboutapp" element={<About />} />
+        <Route path="/profileapp" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );
