@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import LoginPage from "./LoginPage";
-import AssignmentsPage from "./AssignmentsPage";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import LoginPage from "./components/LoginPage";
+import AssignmentsPage from "./components/AssignmentsPage";
 import About from "./Day3/Question3/About";
 import Settings from "./Day3/Question5/Dashboard/Settings";
 import ProductList from "./Day3/Question6/ProductList";
 import ProductDetail from "./Day3/Question6/ProductDetail";
 import { ProductProvider } from "./Day3/Question6/ProductContext";
 import Profile from "./Day3/Question5/Dashboard/Profile";
+import { Day1Component } from "./Day1";
+import { Day2Component } from "./Day2";
+import { Day3Component } from "./Day3";
+import { Day4Component } from "./Day4";
+import { Day5Component } from "./Day5";
+import { Day6Component } from "./Day6";
+import Layout from "./components/Layout";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,16 +24,20 @@ const App = () => {
     setIsLoggedIn(loggedIn === "true");
   }, []);
 
-  const ProtectedRoute = ({ element, ...rest }) => {
-    return isLoggedIn ? element : <Navigate to="/" replace />;
+  const ProtectedRoute = ({ element }) => {
+    return isLoggedIn ? (
+      <Layout setIsLoggedIn={setIsLoggedIn}>{element}</Layout>
+    ) : (
+      <Navigate to="/" replace />
+    );
   };
 
-  const AuthRoute = ({ element, ...rest }) => {
+  const AuthRoute = ({ element }) => {
     return isLoggedIn ? <Navigate to="/assignments" replace /> : element;
   };
 
   return (
-    <Router>
+    <BrowserRouter>
       <ProductProvider>
         <Routes>
           <Route
@@ -44,11 +50,31 @@ const App = () => {
           />
           <Route
             path="/assignments"
-            element={
-              <ProtectedRoute
-                element={<AssignmentsPage setIsLoggedIn={setIsLoggedIn} />}
-              />
-            }
+            element={<ProtectedRoute element={<AssignmentsPage />} />}
+          />
+          <Route
+            path="/assignments/day1"
+            element={<ProtectedRoute element={<Day1Component />} />}
+          />
+          <Route
+            path="/assignments/day2"
+            element={<ProtectedRoute element={<Day2Component />} />}
+          />
+          <Route
+            path="/assignments/day3"
+            element={<ProtectedRoute element={<Day3Component />} />}
+          />
+          <Route
+            path="/assignments/day4"
+            element={<ProtectedRoute element={<Day4Component />} />}
+          />
+          <Route
+            path="/assignments/day5"
+            element={<ProtectedRoute element={<Day5Component />} />}
+          />
+          <Route
+            path="/assignments/day6"
+            element={<ProtectedRoute element={<Day6Component />} />}
           />
           <Route
             path="/about"
@@ -70,9 +96,13 @@ const App = () => {
             path="/profile"
             element={<ProtectedRoute element={<Profile />} />}
           />
+          <Route
+            path="/assignments/*"
+            element={<Navigate to="/assignments" replace />}
+          />
         </Routes>
       </ProductProvider>
-    </Router>
+    </BrowserRouter>
   );
 };
 

@@ -17,17 +17,12 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import { useNavigate } from "react-router-dom";
-import { Day1Component } from "./Day1";
-import { Day2Component } from "./Day2";
-import { Day3Component } from "./Day3";
-import { Day4Component } from "./Day4";
-import { Day5Component } from "./Day5";
 
-const AssignmentsPage = ({ setIsLoggedIn }) => {
+const Layout = ({ children, setIsLoggedIn }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [dashboardAnchorEl, setDashboardAnchorEl] = useState(null);
   const [profileAnchorEl, setProfileAnchorEl] = useState(null);
-  const [selectedDay, setSelectedDay] = useState(0);
+  const [selectedDayName, setSelectedDayName] = useState("Assignments");
   const navigate = useNavigate();
 
   const handleDrawerOpen = () => {
@@ -57,20 +52,22 @@ const AssignmentsPage = ({ setIsLoggedIn }) => {
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
+    navigate("/");
   };
 
-  const handleDaySelect = (index) => {
-    setSelectedDay(index);
+  const handleDaySelect = (day) => {
+    const dayNames = [
+      "Assignment Day 1",
+      "Assignment Day 2",
+      "Assignment Day 3",
+      "Assignment Day 4",
+      "Assignment Day 5",
+      "Assignment Day 6",
+    ];
+    setSelectedDayName(dayNames[day - 1]);
+    navigate(`/assignments/day${day}`);
     handleDrawerClose();
   };
-
-  const dayComponents = [
-    { name: "Assignment Day 1", component: <Day1Component /> },
-    { name: "Assignment Day 2", component: <Day2Component /> },
-    { name: "Assignment Day 3", component: <Day3Component /> },
-    { name: "Assignment Day 4", component: <Day4Component /> },
-    { name: "Assignment Day 5", component: <Day5Component /> },
-  ];
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -87,9 +84,7 @@ const AssignmentsPage = ({ setIsLoggedIn }) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            {selectedDay !== null
-              ? dayComponents[selectedDay].name
-              : "Assignments"}
+            {selectedDayName}
           </Typography>
 
           <div
@@ -118,6 +113,9 @@ const AssignmentsPage = ({ setIsLoggedIn }) => {
               open={Boolean(dashboardAnchorEl)}
               onClose={handleDashboardClose}
             >
+              <MenuItem onClick={() => navigate("/assignments")}>
+                Overview
+              </MenuItem>
               <MenuItem onClick={() => navigate("/about")}>About Us</MenuItem>
               <MenuItem onClick={() => navigate("/settings")}>
                 Settings
@@ -158,51 +156,30 @@ const AssignmentsPage = ({ setIsLoggedIn }) => {
       </AppBar>
       <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerClose}>
         <List>
-          {dayComponents.map((item, index) => (
+          {[
+            "Assignment Day 1",
+            "Assignment Day 2",
+            "Assignment Day 3",
+            "Assignment Day 4",
+            "Assignment Day 5",
+            "Assignment Day 6",
+          ].map((name, index) => (
             <ListItem
+              button
               key={index}
-              onClick={() => handleDaySelect(index)}
-              sx={{
-                backgroundColor:
-                  selectedDay === index ? "lightgrey" : "inherit",
-              }}
+              onClick={() => handleDaySelect(index + 1)}
             >
-              <ListItemText primary={item.name} />
+              <ListItemText primary={name} />
             </ListItem>
           ))}
         </List>
         <Divider />
       </Drawer>
-      <Box ml={2} mt={2} mb={5} position="relative">
-        {selectedDay !== null && dayComponents[selectedDay].component}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: "-50px",
-            right: "16px",
-          }}
-        >
-          <Button
-            onClick={() =>
-              setSelectedDay((prev) =>
-                prev === 0 ? dayComponents.length - 1 : prev - 1
-              )
-            }
-            sx={{ marginRight: "8px" }}
-          >
-            Prev
-          </Button>
-          <Button
-            onClick={() =>
-              setSelectedDay((prev) => (prev + 1) % dayComponents.length)
-            }
-          >
-            Next
-          </Button>
-        </Box>
+      <Box ml={2} mt={2}>
+        {React.cloneElement(children, { setSelectedDayName })}
       </Box>
     </Box>
   );
 };
 
-export default AssignmentsPage;
+export default Layout;
